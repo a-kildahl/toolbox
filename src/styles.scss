@@ -1,0 +1,50 @@
+@import '../node_modules/meyer-reset-scss/reset.scss';
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import './assets/utils', './assets/colors';
+
+
+p {
+    @include margin-vertical(1.5em);
+}
+
+code {
+    background-color: lightgray;
+    border: 1px solid darken(lightgray, 10%);
+    font-size: 90%;
+    padding: 0 .2em;
+    color: #fb6262;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: .2em;
+}
+
+textarea {
+    width: 100%;
+    min-height: 10em;
+    border-radius: .5em;
+    border: 1px solid color(dark);
+    margin: 1em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1.2em;
+    padding-left: .1em;
+    padding-bottom: .5em;
+    padding-top: .5em;
+}
+
+h1 {
+    font-size: 200%;
+    border-bottom: .1em solid color(accent);
+    border-top: .1em solid color(accent);
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 140%;
+    margin-top: 1em;
+}
+
+.json-formatter-toggler {
+    display: none !important;
+}

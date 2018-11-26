@@ -1,0 +1,38 @@
+.output {
+    margin-top: 2em;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 90%;
+    padding: 1em;
+    border-radius: .5em;
+    overflow-x: scroll;
+
+    background-color: #222;
+
+    ul {
+        margin-left: 1.5em;
+    }
+
+    .header {
+        font-style: italic;
+        color: #b6b6ff;
+    }
+
+    .property-name, .array-index {
+        font-weight: bold;
+        color: #b6b6ff;
+    }
+
+    .value-string {
+        color: #ff9103;
+    }
+
+    .value-boolean {
+        color: #5c5cf9;
+    }
+
+    .value-number {
+        color: #a0f1a0;
+    }
+
+}

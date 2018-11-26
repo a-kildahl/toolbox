@@ -1,0 +1,16 @@
+@import '../../../assets/colors';
+
+button.btn {
+    padding: 1em 3em;
+    background-color: lightgray;
+    border: 1px solid color(dark);
+    font-family: 'Montserrat', sans-serif;
+    border-radius: .3em;
+    box-shadow: 0 0 .2em lighten(color(dark), 30%);
+
+    &.btn-block {
+        display: block;
+        width: 100%;
+        font-size: 105%;
+    }
+}

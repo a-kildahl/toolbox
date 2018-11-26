@@ -1,0 +1,13 @@
+<h1>JSON Tools</h1>
+
+<h2>JSON Formatter</h2>
+<p>Please input your JSON document in the textarea below, and press "Format" to see a JSON tree!</p>
+<textarea [(ngModel)]="jsonInput"></textarea>
+<app-button [isBlock]='true' (click)="formatClicked()">Format</app-button>
+<app-formatter [obj]="output"></app-formatter>
+
+<h2>JSON Minifier</h2>
+<p>Please input your JSON document in the textarea below, and press "Minify" to get the minified version.</p>
+<textarea [(ngModel)]="jsonMinifyInput"></textarea>
+<app-button [isBlock]="'true'" (click)="minifyClicked()">Minify</app-button>
+<textarea [(ngModel)]="jsonMinifyResult"></textarea>

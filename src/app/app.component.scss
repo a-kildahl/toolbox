@@ -1,0 +1,32 @@
+@import '../assets/colors', '../assets/utils';
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "menu content";
+    grid-template-columns: 15em 6fr;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    background-color: color(base-dark);
+    grid-area: menu;
+}
+
+main {
+    background-color: color(white);
+    grid-area: content;
+    padding-top: 5em;
+    padding-bottom: 10em;
+
+    section {
+        @include center-block();
+        max-width: 800px;
+
+        line-height: 1.4em;
+        font-size: 1.1em;
+        color: color(dark);
+    }
+}
+

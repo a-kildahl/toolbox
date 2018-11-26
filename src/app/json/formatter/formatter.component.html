@@ -1,0 +1,43 @@
+<div class="output" *ngIf="obj">
+    <ng-container [ngSwitch]="getType(obj)">
+        <ng-container *ngSwitchCase="'object'" [ngTemplateOutlet]="object" [ngTemplateOutletContext]="{obj:obj}"></ng-container>
+        <ng-container *ngSwitchCase="'array'" [ngTemplateOutlet]="array" [ngTemplateOutletContext]="{arr:obj}"></ng-container>
+    </ng-container>
+</div>
+
+<ng-template let-obj='obj' #object>
+    <span class="header">Object</span>
+    <ul>
+        <ng-container *ngFor="let prop of getKeys(obj)">
+            <ng-container [ngSwitch]="getType(obj[prop])">
+                <li *ngSwitchCase="'object'">
+                    <span class="property-name">{{prop}}: </span><ng-container [ngTemplateOutlet]="object" [ngTemplateOutletContext]="{obj:obj[prop]}"></ng-container>
+                </li>
+                <li *ngSwitchCase="'array'">
+                    <span class="property-name">{{prop}}: </span><ng-container [ngTemplateOutlet]="array" [ngTemplateOutletContext]="{arr:obj[prop]}"></ng-container>
+                </li>
+                <li *ngSwitchCase="'string'"><span class="property-name">{{prop}}: </span><span class="value-string">"{{obj[prop]}}"</span></li>
+                <li *ngSwitchCase="'boolean'"><span class="property-name">{{prop}}: </span><span class="value-boolean">{{obj[prop]}}</span></li>
+                <li *ngSwitchCase="'number'"><span class="property-name">{{prop}}: </span><span class="value-number">{{obj[prop]}}</span></li>
+                <li *ngSwitchDefault><span class="property-name">{{prop}}: </span> {{obj[prop]}}</li>
+            </ng-container>
+        </ng-container>
+    </ul>
+</ng-template>
+
+<ng-template let-arr='arr' #array>
+    <span class="header">Array</span>
+    <ul>
+        <li *ngFor="let val of arr; let i = index">
+            <span class="array-index">[{{i}}]: </span>
+            <ng-container [ngSwitch]="getType(val)">
+                <ng-container *ngSwitchCase="'object'" [ngTemplateOutlet]="object" [ngTemplateOutletContext]="{obj:val}"></ng-container>
+                <ng-container *ngSwitchCase="'array'" [ngTemplateOutlet]="array" [ngTemplateOutletContext]="{arr:val}"></ng-container>
+                <ng-container *ngSwitchCase="'string'"><span class="value-string">"{{val}}"</span></ng-container>
+                <ng-container *ngSwitchCase="'boolean'"><span class="value-boolean">{{val}}</span></ng-container>
+                <ng-container *ngSwitchCase="'number'"><span class="value-number">{{val}}</span></ng-container>
+                <ng-container *ngSwitchDefault>{{val}}</ng-container>
+            </ng-container>
+        </li>
+    </ul>
+</ng-template>
