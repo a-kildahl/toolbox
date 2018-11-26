@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import JSONFormatter from 'json-formatter-js';
 
 @Component({
   selector: 'app-json',
