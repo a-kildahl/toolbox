@@ -7,9 +7,8 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 COPY . /usr/src/app
 RUN npm install
-RUN npm install -g @angular/cli@6.1.5
 
-RUN ng build --prod
+RUN npm run prod
 
 # Copy build to target docker image
 FROM nginx:alpine AS base
