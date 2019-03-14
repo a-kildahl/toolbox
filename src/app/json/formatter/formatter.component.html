@@ -17,6 +17,7 @@
                     <span class="property-name">{{prop}}: </span><ng-container [ngTemplateOutlet]="array" [ngTemplateOutletContext]="{arr:obj[prop]}"></ng-container>
                 </li>
                 <li *ngSwitchCase="'string'"><span class="property-name">{{prop}}: </span><span class="value-string">"{{obj[prop]}}"</span></li>
+                <li *ngSwitchCase="'null'"><span class="property-name">{{prop}}: </span><span class="value-null">null</span></li>
                 <li *ngSwitchCase="'boolean'"><span class="property-name">{{prop}}: </span><span class="value-boolean">{{obj[prop]}}</span></li>
                 <li *ngSwitchCase="'number'"><span class="property-name">{{prop}}: </span><span class="value-number">{{obj[prop]}}</span></li>
                 <li *ngSwitchDefault><span class="property-name">{{prop}}: </span> {{obj[prop]}}</li>

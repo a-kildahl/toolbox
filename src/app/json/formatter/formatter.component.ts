@@ -21,6 +21,8 @@ export class FormatterComponent implements OnInit {
   public getType(obj: any): string {
       if (Array.isArray(obj)) {
         return 'array';
+      } else if (obj == null) {
+        return 'null';
       } else {
         return typeof obj;
       }
